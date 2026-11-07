@@ -4,6 +4,7 @@ const db = require('./database');
 
 const app = express();
 
+// Middleware
 app.use(express.json());
 
 // HOME ROUTE
@@ -18,7 +19,8 @@ app.get('/books', (req, res) => {
     db.all('SELECT * FROM books', [], (err, rows) => {
         if (err) {
             return res.status(500).json({
-                message: 'Error retrieving books'
+                message: 'Error retrieving books',
+                error: err.message
             });
         }
 
@@ -62,7 +64,8 @@ app.post('/books', (req, res) => {
     db.run(sql, values, function (err) {
         if (err) {
             return res.status(500).json({
-                message: 'Error adding book'
+                message: 'Error adding book',
+                error: err.message
             });
         }
 
@@ -116,7 +119,8 @@ app.put('/books/:id', (req, res) => {
     db.run(sql, values, function (err) {
         if (err) {
             return res.status(500).json({
-                message: 'Error updating book'
+                message: 'Error updating book',
+                error: err.message
             });
         }
 
@@ -147,7 +151,8 @@ app.delete('/books/:id', (req, res) => {
     db.run(sql, [id], function (err) {
         if (err) {
             return res.status(500).json({
-                message: 'Error deleting book'
+                message: 'Error deleting book',
+                error: err.message
             });
         }
 
@@ -163,8 +168,8 @@ app.delete('/books/:id', (req, res) => {
     });
 });
 
-// START SERVER
-const PORT = 3000;
+// SERVER PORT - Render compatible
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
