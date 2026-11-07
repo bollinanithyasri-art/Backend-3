@@ -166,8 +166,10 @@ Project Repository:
 https://github.com/bollinanithyasri-art/Backend-3
 ## 12. Screenshots
 
-### Home Page
-![Home Page](screenshots/home-page.png)
+## Screenshots
 
-### Get All Books
-![Get Books](screenshots/get-books.png)
+### Home Page
+![Home Page](screenshots/api-home.png)
+
+### Get Books
+![Get Books](screenshots/books-endpoint.png)
