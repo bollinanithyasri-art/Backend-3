@@ -164,3 +164,10 @@ Through this laboratory exercise, the implementation and testing of backend web 
 Project Repository:
 
 https://github.com/bollinanithyasri-art/Backend-3
+## 12. Screenshots
+
+### Home Page
+![Home Page](screenshots/home-page.png)
+
+### Get All Books
+![Get Books](screenshots/get-books.png)
